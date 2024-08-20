@@ -1,4 +1,4 @@
-### 3rd Gen Auto Soft Reset
+## 3rd Gen Auto Soft Reset
 
 ---
 ## 0. Introduction
