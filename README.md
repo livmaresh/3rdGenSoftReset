@@ -6,7 +6,7 @@
 3rd Gen Auto Soft Reset is a combination of Lua and Python scripting that automates the process of soft reseting for static shinies. This is accomplished by template matching for specific images, then checking if the SID is less than 8. *Note: This program does not work for Pokemon Emerald, since the game has broken RNG*
 
 <div style="display: grid">
-<img src="./readme_images/test.png" style="grid-column: 1">
+<img src="./readme_images/readmeTest.png" style="grid-column: 1">
 <img src="./readme_images/luaScreen.png" style="grid-column: 2; width: 89%">
 </div>
 
