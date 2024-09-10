@@ -3,6 +3,7 @@ import pyautogui
 import pydirectinput
 import time
 import socket
+import random
 from playsound import playsound
 
 def matchTemplate(img, template):
@@ -44,7 +45,7 @@ def gameCheck():
     else: return ""
 
 stream = True
-sid = 9999
+sid = 99999
 counter = 0
 starter = starterReset()
 rsStarter = "torchic"
@@ -68,13 +69,13 @@ while(stream):
     time.sleep(sleepCount)
     if( not (starter and (game == "Fire Red" or game == "Leaf Green")) and matchTemplate(cv2.imread("test.png"),template)):
         counter = counter + 1
-        print("Found a match. Checking for SID.")
+        print("Found a match. Checking for shiny roll.")
         clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         clientsocket.connect(('localhost', 8888))
         clientsocket.send(b"Hello \n")
         while sockCheck:
             outMessage = clientsocket.recv(1024)
-            print("The shiny ID is " + str(outMessage.decode('utf-8')).replace("\n","") + ". This was attempt " + str(counter) + ".")
+            print("The shiny roll is " + str(outMessage.decode('utf-8')).replace("\n","") + ". This was attempt " + str(counter) + ".")
             sid = int(outMessage.decode('utf-8'))
             sockCheck = False
         clientsocket.close()
@@ -91,6 +92,7 @@ while(stream):
                 pydirectinput.keyDown("enter")
                 pydirectinput.press("left")
                 pydirectinput.keyUp("enter")
+            time.sleep(random.randrange(0,500)/100)
     elif(starter and (game == "Ruby" or game == "Sapphire") and rsStarter != "torchic" and matchTemplate(cv2.imread("test.png"),starterTemplate)):
         print("Starter box detected. Switching starters.")
         pydirectinput.press("x")
@@ -125,6 +127,7 @@ while(stream):
             pydirectinput.keyDown("ctrl")
             pydirectinput.press("r")
             pydirectinput.keyUp("ctrl")
+            time.sleep(random.randrange(0,500)/100)
     else:
         print("Screenshot was not a match. Continuing.")
     if(firstPass):

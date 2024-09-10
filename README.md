@@ -72,9 +72,19 @@ playsound("./assets/shinysound.mp3",block=False)
 ---
 ## 4. Execution
 
-After the installation/customization is complete, it is finally time for execution. Place your character in front of the static Pokemon or object (a spot where you only need to press A to continue). *Note: the game re-navigates left/right if you are hunting for Treecko or Mudkip.* Save and close mGBA, reopen it, and set the window to full screen on your main monitor. First, load the script by navigating to Tools > Scripting. Select File > Load Script in the pop up window and select *main.lua*.
+After the installation/customization is complete, it is finally time for execution.
+
+1.  Place your character in front of the static Pokemon or object (a spot where you only need to press A to continue). *Note: the scripts re-navigates left/right if you are hunting for Treecko or Mudkip automatically.*
+2.  Save and close mGBA, reopen it, and set the window to full screen on your main monitor.
+3.  First, load the script by navigating to Tools > Scripting. Select File > Load Script in the pop up window and select *main.lua*.
 
 
 <img src="./readme_images/blankLua.png">
 
-You will only see this message that reads *Socket Server Test: Listening on port 8888*. This is correct, and the rest of the script will load after you launch the game. Next, have the Python script *main.py* ready to go (either pre typed into a terminal or get ready to press play in your IDE). Load a Gen 3 Pokemon ROM, navigate over to your terminal/IDE, and then activate the Python script. **If you are NOT resetting for a starter, it is crucial that you wait for the Lua script to load your party Pokemon first. This will occur after the first 2/3 seconds of loading the ROM. This is so the scipt knows which Pokemon to check (Wild instead of Slot 1).** You will have about 2-3 seconds before your first action, which should give you plenty of time to re-navigate over to mGBA. Leave mGBA in focus and you are good to go! Side note: the mGBA scripting window indicates that you can press Shift + Left or Shift + Right to view different Pokemon. Do not do this or else your next encounter will be invalidated. Happy hunting :3
+You will only see this message that reads *Socket Server Test: Listening on port 8888*. This is correct, and the rest of the script will load after you launch the game. 
+
+4.  Next, have the Python script *main.py* ready to go (either pre typed into a terminal or get ready to press play in your IDE).
+5.  Load a Gen 3 Pokemon ROM, navigate over to your terminal/IDE, and then activate the Python script. **If you are NOT resetting for a starter, it is crucial that you wait for the Lua script to load your party Pokemon first. This will occur after the first 2/3 seconds of loading the ROM. This is so the scipt knows which Pokemon to check (Wild instead of Slot 1).**
+5.  Last, re-navigate over to mGBA and leave the emulator in focus. You will have about 2-3 seconds of time, which should be plenty.
+
+Side note: the mGBA scripting window indicates that you can press Shift + Left or Shift + Right to view different Pokemon. Do not do this or else your next encounter will be invalidated. Happy hunting :3
